@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    <p>a</p>
+{% endblock %}
+
+{% block bloque_de_adentro %}
+    <h2>segundo_estoy_adentro!</h2>
+{% endblock %}
+
+{% block saludar %}
+    <h1>Hello There</h1>
+{% endblock %}
+
+{% block content %}
+    <h2>hola</h2>
+    <h1>-----------------------------------------------------------------------------</h1>
+
+    <h6>Datos</h6>
+    <p>Nombre: {{ nombre }}</p>
+    <p>Edad: {{ edad }}</p>
+
+    <h6>Música</h6>
+    {% for cancion in canciones %}
+        <p>- {{ cancion }}</p>
+    {% endfor %}
+
+    <h6>Frutas</h6>
+    {% for fruta in frutas %}
+        {% if fruta == 'pera' %}
+            <p>+1</p>
+        {% endif %}
+    {% endfor %}
+    
+    <h1>-----------------------------------------------------------------------------</h1>
+
+    {{ auto.patente }}
+
+    <h3>Datos de Personas</h3>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+      </tr>
+    {% for persona in personas %}
+        <tr>
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.apellido }}</td>
+          <td>{{ persona.edad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
